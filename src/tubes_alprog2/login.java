@@ -118,7 +118,7 @@ public class login extends javax.swing.JFrame {
                 if (rs.getString("role").equals("karyawan")) {
                     JOptionPane.showMessageDialog(null, "LOGIN BERHASIL","PEMBERITAHUAN",JOptionPane.PLAIN_MESSAGE);//pop up ketika login berhasil
                     JOptionPane.showMessageDialog(null, "Hai, "+user+" SELAMAT BEKERJA","PEMBERITAHUAN",JOptionPane.PLAIN_MESSAGE);
-                    new barang().setVisible(true);
+                    new barang_karyawan().setVisible(true);
                     this.dispose();//percabangan jika nama user sesuai maka akan menampilkan pop up dan membuka aplikasi dan menutup login screen   
                 }
             }
