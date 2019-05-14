@@ -182,12 +182,15 @@ public class barang_admin extends javax.swing.JFrame implements crud{
         searchx = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         kategorix = new javax.swing.JComboBox<>();
+        menux = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("APLIKASI TOKO ELEKTRONIK");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 0, 844, 83));
 
         barang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -207,13 +210,23 @@ public class barang_admin extends javax.swing.JFrame implements crud{
         });
         jScrollPane1.setViewportView(barang);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 118, 568, 470));
+        getContentPane().add(stokx, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 299, 233, 39));
+        getContentPane().add(kodex, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 118, 233, 39));
+        getContentPane().add(namax, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 234, 233, 39));
+        getContentPane().add(hargax, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 375, 233, 39));
+
         jLabel2.setText("Harga");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 375, 96, 39));
 
         jLabel3.setText("Kode Barang");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 118, 96, 39));
 
         jLabel4.setText("Nama Barang");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 234, 96, 39));
 
         jLabel5.setText("Stok");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 299, 96, 39));
 
         tambahkanx.setText("Tambahkan");
         tambahkanx.addActionListener(new java.awt.event.ActionListener() {
@@ -221,6 +234,7 @@ public class barang_admin extends javax.swing.JFrame implements crud{
                 tambahkanxActionPerformed(evt);
             }
         });
+        getContentPane().add(tambahkanx, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 447, -1, -1));
 
         resetx.setText("RESET");
         resetx.addActionListener(new java.awt.event.ActionListener() {
@@ -228,6 +242,7 @@ public class barang_admin extends javax.swing.JFrame implements crud{
                 resetxActionPerformed(evt);
             }
         });
+        getContentPane().add(resetx, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 447, -1, -1));
 
         perbaruix.setText("Perbarui");
         perbaruix.addActionListener(new java.awt.event.ActionListener() {
@@ -235,6 +250,7 @@ public class barang_admin extends javax.swing.JFrame implements crud{
                 perbaruixActionPerformed(evt);
             }
         });
+        getContentPane().add(perbaruix, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 447, -1, -1));
 
         hapusx.setText("Hapus");
         hapusx.addActionListener(new java.awt.event.ActionListener() {
@@ -242,6 +258,7 @@ public class barang_admin extends javax.swing.JFrame implements crud{
                 hapusxActionPerformed(evt);
             }
         });
+        getContentPane().add(hapusx, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 447, -1, -1));
 
         carix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,9 +270,11 @@ public class barang_admin extends javax.swing.JFrame implements crud{
                 carixKeyReleased(evt);
             }
         });
+        getContentPane().add(carix, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 90, 281, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("PENCARIAN NAMA BARANG");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 90, 188, -1));
 
         searchx.setText("CARI");
         searchx.addActionListener(new java.awt.event.ActionListener() {
@@ -263,100 +282,20 @@ public class barang_admin extends javax.swing.JFrame implements crud{
                 searchxActionPerformed(evt);
             }
         });
+        getContentPane().add(searchx, new org.netbeans.lib.awtextra.AbsoluteConstraints(935, 89, 89, -1));
 
         jLabel7.setText("Kategori");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 175, 96, 41));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                                .addComponent(namax, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(resetx)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(hapusx)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(perbaruix)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tambahkanx))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(stokx, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(hargax, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(kodex, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                    .addComponent(kategorix, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(carix, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(searchx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(carix)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(searchx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kodex, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(kategorix, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(namax, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(stokx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(hargax, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tambahkanx)
-                            .addComponent(resetx)
-                            .addComponent(perbaruix)
-                            .addComponent(hapusx)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49))
-        );
+        getContentPane().add(kategorix, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 175, 233, 41));
+
+        menux.setText("MENU");
+        menux.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(menux, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -393,6 +332,12 @@ public class barang_admin extends javax.swing.JFrame implements crud{
     private void searchxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchxActionPerformed
         search();
     }//GEN-LAST:event_searchxActionPerformed
+
+    private void menuxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuxActionPerformed
+        adminMenu menu = new adminMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menuxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -447,6 +392,7 @@ public class barang_admin extends javax.swing.JFrame implements crud{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> kategorix;
     private javax.swing.JTextField kodex;
+    private javax.swing.JButton menux;
     private javax.swing.JTextField namax;
     private javax.swing.JButton perbaruix;
     private javax.swing.JButton resetx;

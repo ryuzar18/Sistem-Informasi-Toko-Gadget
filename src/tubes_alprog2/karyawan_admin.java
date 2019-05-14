@@ -182,6 +182,7 @@ public class karyawan_admin extends javax.swing.JFrame implements crud {
         pencarianx = new javax.swing.JTextField();
         searchx = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        menux = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -289,6 +290,14 @@ public class karyawan_admin extends javax.swing.JFrame implements crud {
         jLabel9.setText("ID KARYAWAN");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 97, -1));
 
+        menux.setText("MENU");
+        menux.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(menux, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -319,6 +328,12 @@ public class karyawan_admin extends javax.swing.JFrame implements crud {
     private void pencarianxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pencarianxKeyReleased
         tampil();
     }//GEN-LAST:event_pencarianxKeyReleased
+
+    private void menuxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuxActionPerformed
+        adminMenu menu = new adminMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menuxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,6 +395,7 @@ public class karyawan_admin extends javax.swing.JFrame implements crud {
     private javax.swing.JTable karyawanx;
     private javax.swing.JTextField lahirx;
     private javax.swing.JTextField masukx;
+    private javax.swing.JButton menux;
     private javax.swing.JTextField namax;
     private javax.swing.JTextField nohpx;
     private javax.swing.JTextField pencarianx;
