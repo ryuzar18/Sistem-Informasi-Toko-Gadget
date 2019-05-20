@@ -5,6 +5,8 @@
  */
 package si_toko;
 
+import si_toko.FIX.KoneksiDatabase;
+import si_toko.FIX.Karyawan_Dashboard;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -101,7 +103,7 @@ public class jadwal_karyawan extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        karyawanMenu menu = new karyawanMenu();
+        Karyawan_Dashboard menu = new Karyawan_Dashboard();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed

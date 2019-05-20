@@ -1,11 +1,13 @@
 package si_toko;
 
+import si_toko.FIX.KoneksiDatabase;
 import java.awt.*;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import si_toko.FIX.CRUD;
 
-public class karyawan_admin extends javax.swing.JFrame implements crud {
+public class karyawan_admin extends javax.swing.JFrame implements CRUD {
     public Connection conn;//untuk menyingkat
     public Statement stat;//untuk menyingkat
     public ResultSet rs;//untuk menyingkat

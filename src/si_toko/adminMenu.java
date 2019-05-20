@@ -5,6 +5,9 @@
  */
 package si_toko;
 
+import si_toko.FIX.Kasir;
+import java.awt.*;
+
 /**
  *
  * @author REY
@@ -16,6 +19,10 @@ public class adminMenu extends javax.swing.JFrame {
      */
     public adminMenu() {
         initComponents();
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();//mendapatkan dimensi layar
+        int x = layar.width/2-this.getSize().width/2;//inisiasi koordinat x
+        int y = layar.height/2-this.getSize().height/2;//inisiasi koordina y
+        this.setLocation(x, y);
     }
 
     /**
@@ -31,6 +38,8 @@ public class adminMenu extends javax.swing.JFrame {
         karyawan = new javax.swing.JButton();
         barang = new javax.swing.JButton();
         jadwal = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        transaksix = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +67,20 @@ public class adminMenu extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("KASIR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        transaksix.setText("LAPORAN TRANSAKSI");
+        transaksix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transaksixActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,10 +95,11 @@ public class adminMenu extends javax.swing.JFrame {
                         .addComponent(barang, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jadwal, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(karyawan, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(karyawan, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jadwal, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(transaksix, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,18 +108,22 @@ public class adminMenu extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addComponent(barang)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(jadwal)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(karyawan)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(transaksix)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void barangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barangActionPerformed
-        barang_admin barang = new barang_admin();
+        BarangAdmin barang = new BarangAdmin();
         barang.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_barangActionPerformed
@@ -111,6 +139,16 @@ public class adminMenu extends javax.swing.JFrame {
         karyawan.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_karyawanActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new Kasir().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void transaksixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksixActionPerformed
+        new laporanPerbulan().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_transaksixActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,8 +187,10 @@ public class adminMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton barang;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jadwal;
     private javax.swing.JButton karyawan;
+    private javax.swing.JButton transaksix;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,9 +1,12 @@
 package si_toko;//package dari class
+import si_toko.FIX.KoneksiDatabase;
+import si_toko.FIX.Karyawan_Dashboard;
 import java.awt.*;//import library java awt
 import java.sql.*;//import library java sql
 import javax.swing.JOptionPane;//import library java option pane
 import javax.swing.table.DefaultTableModel;//import library tabel
-public class barang_karyawan extends javax.swing.JFrame implements crud{
+import si_toko.FIX.CRUD;
+public class barang_karyawan extends javax.swing.JFrame{
     public Connection conn;//untuk menyingkat
     public Statement stat;//untuk menyingkat
     public ResultSet rs;//untuk menyingkat
@@ -135,7 +138,7 @@ public class barang_karyawan extends javax.swing.JFrame implements crud{
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("APLIKASI TOKO ELEKTRONIK");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 0, 809, 83));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 809, 83));
 
         barang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -242,7 +245,7 @@ public class barang_karyawan extends javax.swing.JFrame implements crud{
     }//GEN-LAST:event_searchxActionPerformed
 
     private void menuxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuxActionPerformed
-        karyawanMenu menu = new karyawanMenu();
+        Karyawan_Dashboard menu = new Karyawan_Dashboard();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_menuxActionPerformed
@@ -310,18 +313,4 @@ public class barang_karyawan extends javax.swing.JFrame implements crud{
     private javax.swing.JTextField stokx;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void insert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

@@ -1,15 +1,18 @@
 package si_toko;
 
+import si_toko.FIX.KoneksiDatabase;
 import java.awt.*;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import si_toko.FIX.CRUD;
 
-public class jadwal_admin extends javax.swing.JFrame {
+public class jadwal_admin extends javax.swing.JFrame implements CRUD {
     public Connection conn;//untuk menyingkat
     public Statement stat;//untuk menyingkat
     public ResultSet rs;//untuk menyingkat
     public DefaultTableModel model;//untuk menyingkat
+    
     public jadwal_admin() {
         initComponents();//menginisiasi seluruh fungsi JFrame
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();//mendapatkan dimensi layar
@@ -20,6 +23,25 @@ public class jadwal_admin extends javax.swing.JFrame {
         model = new DefaultTableModel(header,0);//mengeset tabel sesuai header dengan 0 baris
         jadwalx.setModel(model);
         tampil();
+    }
+    
+    public void insert(){
+        String no = nox.getText();//variabel untuk mengambil text di field kode
+        String nama = namax.getText();//variabel untuk mengambil text di field nama
+        String sesi = sesix.getText();//variabel untuk mengambil text di field stok
+        String hari = harix.getText();//variabel untuk mengambil text di field harga
+        KoneksiDatabase classKoneksi = new KoneksiDatabase();//mengambil method KoneksiDatabase
+        try{
+            conn = classKoneksi.getKoneksi();//melakukan method koneksi
+            stat = conn.createStatement();//membuat statement
+            stat.execute("INSERT INTO jadwal VALUES('"+no+"','"+hari+"','"+sesi+"','"+nama+"')");//query untuk insert data barang berdasarkan data yang diinput
+            JOptionPane.showMessageDialog(null, "Tambah Data Berhasil");//pop up ketika tambah data berhasil
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Gagal Menambah Data"+e.getMessage());//pop up ketika gagal menambah data
+        }
+        reset();//menjalankan reset untuk membersihkan field input
+        tampil();//menjalankan tampil untuk mengupdate data yang tertampil
     }
     
     public void tampil(){
@@ -99,6 +121,7 @@ public class jadwal_admin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         nox = new javax.swing.JTextField();
         menux = new javax.swing.JButton();
+        tambahx = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -159,6 +182,14 @@ public class jadwal_admin extends javax.swing.JFrame {
         });
         getContentPane().add(menux, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
 
+        tambahx.setText("INSERT");
+        tambahx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tambahxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tambahx, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -175,6 +206,10 @@ public class jadwal_admin extends javax.swing.JFrame {
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_menuxActionPerformed
+
+    private void tambahxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahxActionPerformed
+        insert();
+    }//GEN-LAST:event_tambahxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,6 +262,17 @@ public class jadwal_admin extends javax.swing.JFrame {
     private javax.swing.JTextField namax;
     private javax.swing.JTextField nox;
     private javax.swing.JTextField sesix;
+    private javax.swing.JButton tambahx;
     private javax.swing.JButton updatex;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void search() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
