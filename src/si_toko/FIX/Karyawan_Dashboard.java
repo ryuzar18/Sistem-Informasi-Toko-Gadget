@@ -29,6 +29,8 @@ public class Karyawan_Dashboard extends javax.swing.JFrame {
         int x = layar.width/2-this.getSize().width/2;//inisiasi koordinat x
         int y = layar.height/2-this.getSize().height/2;//inisiasi koordina y
         this.setLocation(x, y);
+        LOGIN login = new LOGIN();
+        namaAdmin.setText(login.user);
         mainJadwal();
         mainBarang();
     }
@@ -177,6 +179,9 @@ public class Karyawan_Dashboard extends javax.swing.JFrame {
         PanelMenu = new javax.swing.JPanel();
         BARANG = new javax.swing.JButton();
         JADWAL = new javax.swing.JButton();
+        LOGOUT = new javax.swing.JButton();
+        namaAdmin1 = new javax.swing.JLabel();
+        namaAdmin = new javax.swing.JLabel();
         PanelIsi = new javax.swing.JPanel();
         PanelBarang = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -224,6 +229,20 @@ public class Karyawan_Dashboard extends javax.swing.JFrame {
             }
         });
 
+        LOGOUT.setText("LOGOUT");
+        LOGOUT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LOGOUTActionPerformed(evt);
+            }
+        });
+
+        namaAdmin1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        namaAdmin1.setForeground(new java.awt.Color(51, 51, 51));
+        namaAdmin1.setText("HAI ADMIN");
+
+        namaAdmin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        namaAdmin.setText("jLabel20");
+
         javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
         PanelMenu.setLayout(PanelMenuLayout);
         PanelMenuLayout.setHorizontalGroup(
@@ -234,11 +253,26 @@ public class Karyawan_Dashboard extends javax.swing.JFrame {
                     .addComponent(JADWAL, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BARANG, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namaAdmin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(namaAdmin1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenuLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(LOGOUT)))
+                .addContainerGap())
         );
         PanelMenuLayout.setVerticalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMenuLayout.createSequentialGroup()
-                .addGap(182, 182, 182)
+                .addContainerGap()
+                .addComponent(LOGOUT)
+                .addGap(17, 17, 17)
+                .addComponent(namaAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(namaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
                 .addComponent(BARANG)
                 .addGap(68, 68, 68)
                 .addComponent(JADWAL)
@@ -483,6 +517,11 @@ public class Karyawan_Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_hargaxActionPerformed
 
+    private void LOGOUTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGOUTActionPerformed
+        new LOGIN().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_LOGOUTActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -524,6 +563,7 @@ public class Karyawan_Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BARANG;
     private javax.swing.JButton JADWAL;
+    private javax.swing.JButton LOGOUT;
     private javax.swing.JPanel PanelBarang;
     private javax.swing.JPanel PanelIsi;
     private javax.swing.JPanel PanelJadwal;
@@ -544,6 +584,8 @@ public class Karyawan_Dashboard extends javax.swing.JFrame {
     private javax.swing.JTable jadwalx;
     private javax.swing.JComboBox<String> kategorix;
     private javax.swing.JTextField kodex;
+    private javax.swing.JLabel namaAdmin;
+    private javax.swing.JLabel namaAdmin1;
     private javax.swing.JTextField namax;
     private javax.swing.JButton resetx1;
     private javax.swing.JButton searchx;

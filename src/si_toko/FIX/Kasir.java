@@ -239,6 +239,7 @@ public class Kasir extends javax.swing.JFrame{
         jLabel7 = new javax.swing.JLabel();
         subtotalx = new javax.swing.JTextField();
         hapusx = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -391,6 +392,14 @@ public class Kasir extends javax.swing.JFrame{
         });
         getContentPane().add(hapusx, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 580, -1, 30));
 
+        jButton1.setText("LOGOUT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 0, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -442,6 +451,11 @@ public class Kasir extends javax.swing.JFrame{
     private void subtotalxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subtotalxMouseClicked
         subtotal();
     }//GEN-LAST:event_subtotalxMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new LOGIN().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -498,6 +512,7 @@ public class Kasir extends javax.swing.JFrame{
     private javax.swing.JTextField carix;
     private javax.swing.JButton hapusx;
     private javax.swing.JTextField hargax;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
