@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2019 at 05:42 PM
+-- Generation Time: May 23, 2019 at 01:39 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`username`, `nama`, `password`, `role`) VALUES
 ('dwirahayu', 'Dwi Rahayu', 'dwi123', 'karyawan'),
-('kinantiputri', 'Kinanti Putri', 'kinan123', 'karyawan'),
+('kinantiputri', 'Kinanti Putri', 'kinan123', 'kasir'),
 ('reynaldiyulizar', 'Reynaldi Yulizar', 'rey123', 'admin');
 
 -- --------------------------------------------------------
@@ -63,9 +63,9 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kd_barang`, `kategori`, `nm_barang`, `stok`, `harga`) VALUES
-('HP001', 'HP', 'Oppo F11', '28', 3900000),
-('HP002', 'HP', 'Nokia 8', '30', 5000000),
-('PC002', 'HP Second', 'Lenovo Ideapad 120S', '8', 3205000);
+('4', 'HP Second', 'MI A1', '3', 1500000),
+('HP001', 'HP', 'Oppo F11', '28', 3500000),
+('PC002', 'HP Second', 'Lenovo Ideapad 120S', '10', 3205000);
 
 -- --------------------------------------------------------
 
@@ -85,9 +85,12 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`no_jadwal`, `hari`, `sesi`, `nama_karyawan`) VALUES
-(1, 'Senin', 1, 'Rey'),
+(1, 'Senin', 1, 'Kinan'),
 (2, 'Senin', 2, 'Daldi'),
-(3, 'Senin', 3, 'Tama');
+(3, 'Senin', 3, 'Dwi'),
+(4, 'Selasa', 1, 'Daldi'),
+(5, 'Selasa', 2, 'Reta'),
+(6, 'Selasa', 3, 'Dwi');
 
 -- --------------------------------------------------------
 
@@ -110,7 +113,7 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `nama`, `tanggal_lahir`, `alamat`, `jabatan`, `tanggal_masuk`, `no_hp`) VALUES
-(1, 'Reynaldi Yulizar', '2019-05-01', 'Jl. Soekarno Hatta', 'admin', '2019-02-10', '082254519595');
+(2, 'Ryan', '1999-05-01', 'Jl. Soekarno Hatta', 'admin', '2019-02-10', '082254519595');
 
 -- --------------------------------------------------------
 
@@ -123,21 +126,6 @@ CREATE TABLE `sementara` (
   `harga` varchar(32) NOT NULL,
   `jumlah` varchar(32) NOT NULL,
   `total_harga` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `terjual`
---
-
-CREATE TABLE `terjual` (
-  `no_terjual` int(32) NOT NULL,
-  `no_transaksi` int(32) NOT NULL,
-  `nama_barang` varchar(100) NOT NULL,
-  `harga` int(32) NOT NULL,
-  `jumlah` int(32) NOT NULL,
-  `total_harga` int(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -159,7 +147,8 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`no_transaksi`, `kode_transaksi`, `tanggal_transaksi`, `bulan`, `jumlah`) VALUES
-(1, '2019/05/14 23:28:53', '2019-05-14 15:29:10', 'MAY', '13,515,000');
+(1, '2019/05/14 23:28:53', '2019-05-14 15:29:10', 'MAY', '13,515,000'),
+(2, '2019/05/15 13:45:40', '2019-05-15 05:46:09', 'MAY', '24,410,000');
 
 --
 -- Indexes for dumped tables
@@ -196,12 +185,6 @@ ALTER TABLE `sementara`
   ADD PRIMARY KEY (`nama_barang`);
 
 --
--- Indexes for table `terjual`
---
-ALTER TABLE `terjual`
-  ADD PRIMARY KEY (`no_terjual`);
-
---
 -- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
@@ -215,19 +198,13 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `terjual`
---
-ALTER TABLE `terjual`
-  MODIFY `no_terjual` int(32) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_karyawan` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `no_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
